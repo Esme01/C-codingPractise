@@ -1,36 +1,21 @@
-#include<bits/stdc++.h>
+#include<iostream>
 #include<stdio.h>
 #include<math.h>
-using namespace std;
-
-const int N = 1e3;
-typedef long long ll;
-ll f[N];
 
 int main()
 {
-	/*数组法*/
-	int n;
-	cin>>n;
-	f[0]=0;
-	f[1]=0;
-	f[2]=1;
-	for(int i=3;i<=n;i++)
+	int a,b,n;
+	double c;
+	//要用double来存储n的开方，因为n不一定是完全平方数
+	for(a=1;a<=9;a++)
 	{
-		f[i]=(i-1)*(f[i-1]+f[i-2]);
+		for(b=0;b<=9;b++)
+		{
+			n=1100*a+11*b;
+			c=sqrt(n);
+			if(floor(c+0.5)==c)//如何判断是否是整数？
+				printf("%d\n",n);
+		}
 	}
-	cout<<f[n]<<endl;
-
-
-	/*空间优化方法*/
-	int a,b,c;
-	a=0,b=1,c=0;
-	for(int i=3;i<=n;i++)
-	{
-		c=(a+b)*(i-1);
-		a=b;
-		b=c;
-	}
-	cout<<c;
 	return 0;
 }
