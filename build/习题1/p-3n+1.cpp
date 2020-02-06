@@ -6,10 +6,8 @@ int main()
 {
 	long long n;
     int count=0;
-    
     scanf("%d", &n);
     //long long n = n2;
-
     while(n > 1)
     {  
         if(n%2 != 0)

@@ -27,7 +27,7 @@ int main()
     for(x=1;;x++)//也可以从32才开始枚举，32*32=1024
     {
         n=x*x;
-        if(n<1000)continue;
+        if(n<1000)continue;//其实这句话多余
         if(n>9999)break;
         hi=n/100;
         lo=n%100;
@@ -35,7 +35,5 @@ int main()
             printf("%d\n",n);
         }
     }
-
-    
 	return 0;
 }
