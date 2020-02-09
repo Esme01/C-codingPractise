@@ -1,28 +1,26 @@
 #include<iostream>
 #include<stdio.h>
 #include<math.h>
+#include<time.h>
 
 int main()
 {
-	long long n;
-    int count=0;
-    
-    scanf("%d", &n);
-    //long long n = n2;
-
-    while(n > 1)
-    {  
-        if(n%2 != 0)
+	int n;
+	int sum=0;
+	scanf("%d",&n);
+	if(n>25)
+	{
+		n=25;
+	}
+	for(int i=1;i<=n;i++)
+	{
+		int t=1;
+		for(int j=1;j<=i;j++)
 		{
-			 n = (n * 3 + 1)/2;
-			 count=count+2;
+			t=t*j%1000000;
 		}
-        else
-		{
-			 n = n / 2;
-			count++;
-		}
-    }
-    printf("%d\n", count);
-    return 0;
+		sum=(sum+t)%1000000;
+	}
+	printf("%d",sum);
+	printf("%.2lf\n",(double)clock()/CLOCKS_PER_SEC);
 }
