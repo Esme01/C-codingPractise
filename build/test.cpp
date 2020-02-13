@@ -1,19 +1,18 @@
 #include<stdio.h>
 #include<iostream>
-#include<math.h>
-#include<cstdio>
-
+#include<cmath>
+#include<stdlib.h>
  using namespace std;
- int main()
- {
-     //法一：无公式
-     int n;
-     cin>>n;
-     long long sum=0;
-     for(int i=1;i<=n;i++)
-     {
-         sum+=
-         //如何求结果为小数的商？
-     }
 
- }
+int main()
+{
+     int n,m;
+     cin>>n>>m;
+     double sum=0;
+     for(int i=n;i<=m;i++)
+     {
+         sum+=1.0/i/i;
+         //此处使用sum+=1.0/(i*i)会溢出
+     }
+     printf("%.5lf\n",sum);
+}
