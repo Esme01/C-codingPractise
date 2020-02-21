@@ -3,32 +3,31 @@
 #include<cmath>
 #include<stdlib.h>
 using namespace std;
+const int MAXN=100;
+int a[MAXN]={0};
+//1是开，0是关
 int main()
 {
-    int a=123,b,c;
-    //用这样的初始化方式保证三个数的倍数关系
-    //用一个数组来保证“每个数字恰好使用一次”
-    for(;a<=329;a++)
+    int n,k;
+    cin>>n>>k;
+    for(int i=1;i<=k;i++)
     {
-        int i[11]={0};
-        int temp=0;
-        //应该在每轮循环都初始化
-        b=2*a;
-        c=3*a;
-        i[a%10]=1;i[a/10%10]=1;i[a/100]=1;
-        i[b%10]=1;i[b/10%10]=1;i[b/100]=1;
-        i[c%10]=1;i[c/10%10]=1;i[c/100]=1;
-        for(int j=1;j<=9;j++)
+        for(int j=1;j*i<=n;j++)
         {
-            temp+=i[j];
+            if(a[j*i]==1)a[j*i]=0;
+            else
+            {
+                a[j*i]=1;
+            }
         }
-        if(temp==9)
-        {
-            printf("%d %d %d\n",a,b,c);
-        }
-
     }
+    for(int i=1;i<=n;i++)
+    {
+        if(a[i]==1)
+        {
+            cout<<i<<" ";
+        }
+    }
+    cout<<endl;
     return 0;
-
-
 }
