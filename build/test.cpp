@@ -1,33 +1,41 @@
-#include<stdio.h>
 #include<iostream>
-#include<cmath>
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
 #include<stdlib.h>
 using namespace std;
-const int MAXN=100;
-int a[MAXN]={0};
-//1是开，0是关
+
+#define MAXN 10
+//define不用加分号
+int a[MAXN][MAXN];
+
 int main()
 {
-    int n,k;
-    cin>>n>>k;
-    for(int i=1;i<=k;i++)
+    memset(a,0,sizeof(a));
+    int n,i,j,k=1;
+    cin>>n;
+    // for(k=1;k<=n*n;k++)
+    // {
+        
+    // }
+    // j=n-1;
+    // i=0;
+
+    k=a[i=0][j=n-1]=1;
+    while (k<n*n)//因为之后k会++所以不是<=
     {
-        for(int j=1;j*i<=n;j++)
-        {
-            if(a[j*i]==1)a[j*i]=0;
-            else
-            {
-                a[j*i]=1;
-            }
-        }
+        while (i+1<n&&!a[i+1][j])a[++i][j]=++k;
+        while (j-1>=0&&!a[i][j-1])a[i][--j]=++k;
+        while (i-1>=0&&!a[i-1][j])a[--i][j]=++k;
+        while (j+1>n&&!a[i][j+1])a[i][++j]=++k;
     }
-    for(int i=1;i<=n;i++)
+    for(int c=0;c<n;c++)
     {
-        if(a[i]==1)
+        for(int b=0;b<n;b++)
         {
-            cout<<i<<" ";
+            printf("%3d",a[c][b]);
         }
+        printf("\n");//是\不是/
     }
-    cout<<endl;
     return 0;
 }
