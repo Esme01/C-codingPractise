@@ -15,7 +15,9 @@ int main()
     //scanf("%s",s);
     int n,m=0,max=0;
     int i,j,k;
-    fgets(buf,sizeof(s),stdin);//stdin标准流输入
+    fgets(buf,sizeof(s),stdin);
+    //stdin标准流输入
+    //因为输入的字串可能包含空格和TAB键，所以要用合适的输入法
     n=strlen(buf);
     for ( i = 0; i < n; i++)
         if (isalpha(buf[i]))s[m++]=toupper(buf[i]);
@@ -30,7 +32,7 @@ int main()
             int ok=1;
             for ( k = i; k <=j; k++)
                 if (s[k]!=s[j+i-k])ok=0;
-            if (ok&&j-i+1>max)max=j-i+1;
+            if (ok && j-i+1>max)max=j-i+1;
         }
     }
     printf("max=%d\n",max);
