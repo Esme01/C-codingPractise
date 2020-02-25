@@ -18,6 +18,7 @@ int main(void)
     }
   }
   m=atoi(a);
+  //把字符数组变成整数
   printf("%d\n",m);
   return 0;
 }

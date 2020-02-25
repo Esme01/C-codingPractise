@@ -22,6 +22,7 @@ int main()
     // {
     //     num=num*10+(s[i]-'0');
     // }
+    // 这个方法不行
     num=atoi(s);
     printf("%d\n",num);
    return 0; 
