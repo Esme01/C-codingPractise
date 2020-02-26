@@ -7,21 +7,28 @@
 #define MAXN 100+10
 using namespace std;
 
-char s[MAXN];//声明长度不小于10^7应该放在main函数外
+int s[MAXN][MAXN]={0};//不为0的地方就不用填补
 int main()
 {
-   fgets(s,sizeof(s),stdin);
-   int flag=1,count=0,num=0;
-   for (int i = 0; i < sizeof(s); i++)
+   int n;
+   cin>>n;
+   int i=0,j=n-1,num=1;
+   s[i][j]=1;
+   while (s[i+1][j]==0)
    {
-      if (isalpha(s[i]))
-      {
-         count++;
-         if (flag==1)num++;
-         flag=0;
-      }
-      else flag=1;
+      //要预判下一个是否是0，再往下填
+      while (s[i+1][j]==0&&i+1<n)s[++i][j]=++num;
+      while (s[i][j-1]==0&&j-1>=0)s[i][--j]=++num;
+      while (s[i-1][j]==0&&i-1>=0)s[--i][j]=++num;
+      while (s[i][j+1]==0&&j+1<n)s[i][++j]=++num;
    }
-   cout<<num<<" "<<count/num<<endl;
+   for ( i = 0; i < n; i++)
+   {
+      for ( j = 0; j < n; j++)
+      {
+            cout<<s[i][j]<<" ";
+      }
+      printf("\n");
+   }
    return 0;
 }

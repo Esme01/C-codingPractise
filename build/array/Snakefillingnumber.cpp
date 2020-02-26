@@ -14,6 +14,7 @@ int main(){
     scanf("%d",&n);
     total=a[x=0][y=n-1]=1;
     while (total<n*n)
+    //while (a[x+1][y]==0)
     {
         while (x+1<n&&!a[x+1][y])a[++x][y]=++total;
         while (y-1>=0&&!a[x][y-1])a[x][--y]=++total;
@@ -27,6 +28,9 @@ int main(){
         {
             /* code */
             printf("%3d",a[x][y]);
+            //
+            //printf("%03d",a[x][y]);
+            //指定格式的输出，就可以让矩阵对齐
             
          }
          printf("\n");
