@@ -6,21 +6,13 @@ using namespace std;
 
 int main()
 {
-    char t;
-    int num;
-    scanf("%c",&t);
-    if (isdigit(t))
-    //不能直接判断整数
+    int num,n,product=1;
+    while (1)
     {
-        num=atoi(t)%1000;
+        num=scanf("%d",&n);
+        if(num==EOF)break;
+        if (num==1)product=product*(n%1000)%1000;
     }
-    
-    // else
-    // {
-    //     cout<<"0"<<endl;
-    // }
-    
-    
-    cout<<t<<endl;
+    printf("%03d",product);
     return 0;
 }
