@@ -39,5 +39,22 @@ int main()
            printf("%d\n", x*y);break;
      }
 
+    /**
+     * 通过选择合适的输入方法将问题简化
+     * 
+    */
+    // int a,b,c; 
+    // char f;      
+    // scanf("%d",&a);     
+    // scanf("%c",&f);  
+    // while((f!='+')&&(f!='-')&&(f!='*'))
+    //    scanf("%c",&f);    
+    // 若是输入的一直都不是运算符号，就会一直输入
+    //    scanf("%d",&b); 
+    //    if (f=='+') c=a+b;  
+    //    else  if(f=='-') c=a-b; 
+    //    else    c=a*b;      
+    // printf("%d",c); 
+    // return 0;
     return 0;
 }
