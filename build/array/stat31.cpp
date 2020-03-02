@@ -7,7 +7,7 @@
 #define MAXN 100
 using namespace std;
 
-int s[MAXN];//声明长度不小于10^7应该放在main函数外
+int s[MAXN],a[MAXN];//声明长度不小于10^7应该放在main函数外
 int main()
 {
    /**
@@ -17,7 +17,7 @@ int main()
    //难点：如何统计哪个分数出现的次数最多？
    //先全部输入，再一个个计算
    //先排序后统计
-   int t,i=0,n,m,temp;
+   int t,i=0,n,m,temp,max=0;
    while (scanf("%d",&t)==1)s[i++]=t;
    for ( m = 0; m < i-1; m++)
    {
@@ -36,5 +36,17 @@ int main()
    {
        cout<<s[j]<<" ";
    }
+   cout<<endl;
+
+    temp=s[0];
+    for(int j=0;j<i;j++)
+    {
+        if (s[j]==s[j+1])
+        {
+            max++;
+        }
+        
+    }
+
    return 0;
 }
