@@ -7,16 +7,24 @@ char s[MAXN];
 using namespace std;
 int main()
 {
-    int a,b,c; 
-    char f;      
-    scanf("%d",&a);     
-    scanf("%c",&f);  
-    while((f!='+')&&(f!='-')&&(f!='*'))
-       scanf("%c",&f);     
-       scanf("%d",&b); 
-       if (f=='+') c=a+b;  
-       else  if(f=='-') c=a-b; 
-       else    c=a*b;      
-    printf("%d",c); 
+    int n,i=0;
+    cin>>n;
+    while (n>1)
+    {
+         if (n%2!=0)
+    {
+        n=3*n+1;
+        i++;
+    }
+    else
+    {
+        n/=2;
+        i++;
+    }
+
+    }
+    cout<<i<<endl;
     return 0;
+   
+
 }
