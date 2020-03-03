@@ -8,13 +8,15 @@ int s[MAXN];
 using namespace std;
 int main()
 {
-    int b,n,temp,res=0,i=0;
+    int b,n,temp,res=0,i=1;
     cin>>b>>n;
+    res=n%10;
+    n/=10;
     while (n!=0)
     {
         temp=n%10;
         n/=10;
-        res+=pow(b,i++);
+        res+=temp*pow(b,i++);
     }
     cout<<res<<endl;
     return 0;
