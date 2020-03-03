@@ -15,10 +15,10 @@ int main()
     
     for (int i = 0; i < n; i++)
     {
-        for (int j = n-1; j >= 0; j++)
+        for (int j = n-1; j >= 0; j--)
         {
-            ss[j][i]=s[i][n-j-1];
-            cout<<ss[j][i]<<endl;
+            ss[j][i]=s[i][n-1-j];
+            //cout<<ss[j][i]<<endl;
         }
     }
 
