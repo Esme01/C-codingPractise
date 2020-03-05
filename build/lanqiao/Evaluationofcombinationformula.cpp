@@ -7,7 +7,7 @@ long long cal1(long long n)
     long long x=1;
     for (long long i = 1; i <= n; i++)
     {
-        x=x*i%MAX;
+        x=x%MAX*i%MAX;
     }
     return x;
 }
