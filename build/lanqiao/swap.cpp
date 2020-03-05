@@ -2,10 +2,10 @@
 #include<iostream>
 using namespace std;
 void swap(int *a,int *b)
-//注意指针参数的写法
 {
     int temp=*a;
     //需要声明一个临时变量
+    //错误写法 int *t;
     *a=*b;
     *b=temp;
 }
