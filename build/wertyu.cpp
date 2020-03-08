@@ -1,6 +1,8 @@
 #include<stdio.h>
 
-char *s="`1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./";
+//char s[]="`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
+char *s="`1234567890-=QWERTYUIOP[]\\\ASDFGHJKL;'ZXCVBNM,./";
+//
 //注意声明字符串的形式
 
 int main()
