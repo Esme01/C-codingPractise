@@ -16,6 +16,7 @@ int main()
             f[j]=(temp+f[j]*i)%10;
             temp=(temp+f[j]*i)/10;
         }
+        temp=0;//temp每轮计算都要从0开始
     }
     while (f[s]==0)s++;
     for ( ; s>=0 ; s--)
