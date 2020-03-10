@@ -23,11 +23,12 @@
 int main()
 {
     int c, q = 1;
+    //使用一个标志变量即可
     while((c = getchar()) != EOF)
     {
         if(c == '"')
         {
-            printf("%s", q ? "``" : "''");
+            printf("%s", q ? "``" : "''");//printf中三元运算法方法
                 q = !q;
         }
         else printf("%c", c);

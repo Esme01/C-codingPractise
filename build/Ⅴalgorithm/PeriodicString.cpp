@@ -25,7 +25,7 @@ int main()
         {
             int ok=1;
             for (int j = i; j < len; j++)
-                if (word[j]!=word[j%i])
+                if (word[j]!=word[j%i])//这个%很巧妙！~
                 {
                     ok=0;
                     break;

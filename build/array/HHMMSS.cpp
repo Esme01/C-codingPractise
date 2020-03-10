@@ -18,7 +18,7 @@ int main()
     sscanf(s,"%[^:]:%[^:]:%2s",HH,MM,SS);
     hh=atoi(HH);
     mm=atoi(MM);
-    ss=atoi(SS);
+    ss=atoi(SS);//把字符变成数字
     printf("%d %d %d\n",hh,mm,ss);
     return 0;
 }
