@@ -44,13 +44,17 @@ int main()
     while (j<1000-1&&flag==1)
     {
         t=operate(s[j]);
-        s[++j]=t;
+        //s[++j]=t;
+        //先判断，后加上去
         for (int i = 0; i < 1000; i++)
              if(t==s[i])
              {
                  flag=0;
+                 s[++j]=t;
                  break;
              }
+        //当flag==0时，依然会赋值
+        if(flag!=0)s[++j]=t;
     }
     int m=1;
     cout<<s[0];
