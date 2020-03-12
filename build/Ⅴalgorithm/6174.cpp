@@ -38,18 +38,23 @@ int operate(int a)
 int main()
 {
     int a,s[1000]={0},j=0,t;
+    bool flag=1;
     cin>>a;
-    s[1]=a;
-    while (j<1000-1)
+    s[0]=a;
+    while (j<1000-1&&flag==1)
     {
         t=operate(s[j]);
         s[++j]=t;
         for (int i = 0; i < 1000; i++)
-            if(t==s[i])break;
+             if(t==s[i])
+             {
+                 flag=0;
+                 break;
+             }
     }
     int m=1;
     cout<<s[0];
-    while (s[m]!=0)printf("->%d",s[m]);
+    while (s[m]!=0)printf("->%d",s[m++]);
     cout<<endl;
     return 0;
 }
