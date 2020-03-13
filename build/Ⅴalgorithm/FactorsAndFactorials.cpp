@@ -28,7 +28,7 @@ int main()
     int s[30]={0};
     cin>>n;
 
-    for (int j = 1; j <= n; j++)m*=j;//53！就超了
+    for (int j = 1; j <= n; j++)m*=j;//53！就超了,如何处理大数的阶乘？
     for (;;)
     {
         if (p[k]==0)break;
