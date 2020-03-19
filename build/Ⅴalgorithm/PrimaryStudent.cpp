@@ -25,7 +25,7 @@ using namespace std;
 int main()
 {
     int a,b;
-    while (scanf("%d%d",&a,&b)==2)
+    while (scanf("%d%d",&a,&b)==2)//可以一直输入
     {
         if (!a&&!b)return 0;//如果都等于0则退出程序
         int c=0,ans=0;//不需要知道结果，只求进位，所以设定为局部变量

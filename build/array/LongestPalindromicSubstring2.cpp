@@ -7,7 +7,7 @@
  * **/
 # include<stdio.h>
 # include<string.h>
-# include<ctype.h>
+# include<ctype.h>//isalpha()
 # define MAXN 5000+10
 char buf[MAXN],s[MAXN];
 int p[MAXN];
@@ -16,7 +16,7 @@ int main()
 {
     int n,m=0,max=0,x,y;
     int i,j;
-    fgets(buf,sizeof(s),stdin);
+    fgets(buf,sizeof(s),stdin);//输入方式
     n=strlen(buf);
     for ( i = 0; i < n; i++)
         if (isalpha(buf[i]))
@@ -36,6 +36,7 @@ int main()
                 max=j*2+1;
                 x=p[i-j];
                 y=p[i+j];
+                //xy记录回文的开头和结尾
             }
         }
         //回文长度为奇数的判断
