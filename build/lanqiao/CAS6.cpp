@@ -63,7 +63,38 @@ main函数需要返回0;
 */
 
 
+#include<iostream>
+#include<cstdio>
+#include<cstring>
 
+using namespace std;
+
+
+int getTime()//在子函数中读入字符串
+{
+    char line[25];
+    int h1,h2,m1,m2,s1,s2,d=0;
+    cin.getline(line,25);
+    if (strlen(line)==17)sscanf(line,"%d:%d:%d %d:%d:%d",&h1,&m1,&s1,&h2,&m2,&s2);
+    else sscanf(line,"%d:%d:%d %d:%d:%d (+%d)",&h1,&m1,&s1,&h2,&m2,&s2,&d);
+    //全部换成秒来计算
+    return (d*24+h2-h1)*3600+(m2-m1)*60+(s2-s1);
+}
+
+int main()
+{
+    int n,a,b,c;
+    cin>>n;
+    for (int i = 0; i < n; i++)
+    {
+        a=getTime();
+        b=getTime();
+        c=(a+b)>>1;
+        printf("%02d:%02d:%02d\n",c/3600,c/60%60,c%60);
+    }
+    return 0;
+
+}
 
 
 
