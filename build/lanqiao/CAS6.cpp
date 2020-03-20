@@ -72,7 +72,7 @@ using namespace std;
 
 int getTime()//在子函数中读入字符串
 {
-    char line[25];
+    char line[25];//因为要用strlen，所以不用string
     int h1,h2,m1,m2,s1,s2,d=0;
     cin.getline(line,25);
     if (strlen(line)==17)sscanf(line,"%d:%d:%d %d:%d:%d",&h1,&m1,&s1,&h2,&m2,&s2);
@@ -84,7 +84,7 @@ int getTime()//在子函数中读入字符串
 int main()
 {
     int n,a,b,c;
-    cin>>n;
+    (cin>>n).get();//cin会把换行符留在队列中
     for (int i = 0; i < n; i++)
     {
         a=getTime();
@@ -93,6 +93,7 @@ int main()
         printf("%02d:%02d:%02d\n",c/3600,c/60%60,c%60);
     }
     return 0;
+    
 
 }
 
