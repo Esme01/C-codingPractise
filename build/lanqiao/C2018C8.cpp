@@ -28,7 +28,7 @@ int main()
         cout<<s[j-1];
         //输出中间空格
         for(int a=1;a<=2*j-3;a++)cout<<'.';
-        cout<<s[4*n-4-1-j-2]<<endl;
+        cout<<s[4*n-4-1-j+2]<<endl;
    }
    
    //输出最后一行,共2*n-1个数字
