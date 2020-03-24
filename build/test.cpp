@@ -5,33 +5,34 @@
 
 using namespace std;
 
-int global_id=0
-class Student
-{
-public:
-   Student(const string &name,int age,bool male,double high,double weight):name(name),age(age),id(id),male(male),high(high),weight(weight){
-      this->id=++global_id;//简洁的写法
-      if (age>0)
-      {
-         this->age=age;
-      }
-   };
-   //this->name=name
+/*
+ * @lc app=leetcode id=696 lang=c
+ *
+ * [696] Count Binary Substrings
+ */
+
+// @lc code=start
 
 
-private:
-   string name;
-   int age;
-   int id;
-   bool male;
-   double high;
-   double weight;
-};
-
-
-
-int main()
-{
-   
-   return 0;
+int countBinarySubstrings(char * s){
+    int l=strlen(s);
+    int flag=0,ss=0;
+    for (int i = 0; i <l; i++)
+    {
+        char t=s[i];
+        for (int j = i; j < l; j++)
+        {
+            if (s[j]==t);
+                //if (flag!=0)break;
+            else 
+            {
+                flag++;
+                if ((j-i)%2==1)ss++;
+            }
+            if (flag>1)break;            
+        }
+        flag=0;
+    }
+    return ss;
+    
 }
