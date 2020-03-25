@@ -1,38 +1,44 @@
 #include<iostream>
-#include<string.h>
-#include<stdio.h>
-#include<sstream>//stringstream
-
+#include<vector>
 using namespace std;
+//遍历
+void show(const vector<int> &v)
+{
+    cout<<"size"<<v.size()<<":";//元素个数
+    // for (auto it = v.begin(); it!= v.end(); it++)//auto自动类型
+    // {
+    //     cout<<*it<<" ";//*是取内容符号
+    // }//迭代器,it是指针
 
-/*
- * @lc app=leetcode id=696 lang=c
- *
- * [696] Count Binary Substrings
- */
-
-// @lc code=start
-
-
-int countBinarySubstrings(char * s){
-    int l=strlen(s);
-    int flag=0,ss=0;
-    for (int i = 0; i <l; i++)
+    for (int i = 0; i < v.size(); i++)
     {
-        char t=s[i];
-        for (int j = i; j < l; j++)
-        {
-            if (s[j]==t);
-                //if (flag!=0)break;
-            else 
-            {
-                flag++;
-                if ((j-i)%2==1)ss++;
-            }
-            if (flag>1)break;            
-        }
-        flag=0;
+        cout<<v[i]<<" ";
     }
-    return ss;
-    
+    //类似的形式
+    cout<<endl;
 }
+
+int main()
+{
+//1.初始化
+    vector<int> v1;
+    vector<int> v2(10);
+    vector<int> v3(10,100);//长度，值
+    show(v1);
+    show(v2);
+    show(v3);
+
+    for (int i = 0; i < 10; i++)
+    {
+        v2.push_back(i);
+    }
+    for (int  i = 0; i < 10; i++)
+    {
+        v2[i]=i;
+    }
+    v2.erase(v2.end()-1);
+    show(v2);
+    return 0;
+
+}
+    
