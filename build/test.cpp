@@ -1,44 +1,50 @@
 #include<iostream>
-#include<vector>
+#include<queue>
+#include<time.h>
 using namespace std;
-//遍历
-void show(const vector<int> &v)
-{
-    cout<<"size"<<v.size()<<":";//元素个数
-    // for (auto it = v.begin(); it!= v.end(); it++)//auto自动类型
-    // {
-    //     cout<<*it<<" ";//*是取内容符号
-    // }//迭代器,it是指针
 
-    for (int i = 0; i < v.size(); i++)
-    {
-        cout<<v[i]<<" ";
-    }
-    //类似的形式
-    cout<<endl;
-}
+typedef priority_queue<int,vector<int>,greater<int>> pq;
+
+//priorityDemo
+
+void f1();
+void f2();//子函数声明
 
 int main()
 {
-//1.初始化
-    vector<int> v1;
-    vector<int> v2(10);
-    vector<int> v3(10,100);//长度，值
-    show(v1);
-    show(v2);
-    show(v3);
+    //compare比较器
+    f1();
+    cout<<"==============="<<endl;
+    f2();
 
+    return 0;
+}
+
+void f2(){
+    pq q;
+    srand(time(0));//头文件是time,设置时间种子
     for (int i = 0; i < 10; i++)
     {
-        v2.push_back(i);
+        q.push(rand()%100);//随机产生十个数
     }
-    for (int  i = 0; i < 10; i++)
+    while (!q.empty())
     {
-        v2[i]=i;
+        cout<<q.top()<<endl;
+        q.pop();
     }
-    v2.erase(v2.end()-1);
-    show(v2);
-    return 0;
-
 }
-    
+
+void f1()
+{
+    priority_queue<int> q;
+    srand(time(0));
+    for (int i = 0; i < 10; i++)
+    {
+        q.push(rand()%100);
+    }
+    while (!q.empty())
+    {
+        cout<<q.top()<<endl;
+        q.pop();
+    }
+}
