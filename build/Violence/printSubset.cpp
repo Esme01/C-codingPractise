@@ -14,7 +14,7 @@ int main()
 {
     int n;
     cin>>n;
-    for (int i = 0; i <(1<<n) ; i++)
+    for (int i = 1; i <(1<<n) ; i++)
     //n个数一共有2^n个子集
     {
         print_subset(n,i);
