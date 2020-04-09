@@ -7,9 +7,9 @@ int main()
     cin>>n;
     for ( a = 1; a*a < n ; a++)
     {
-        for ( b = a; a*a+b*b < n; b++)
+        for ( b = a+1; a*a+b*b < n; b++)
         {
-            for ( c = b; a*a+b*b+c*c <= n; c++)
+            for ( c = b+1; a*a+b*b+c*c <= n; c++)
             {
                 if (a*a+b*b+c*c==n)
                 {
