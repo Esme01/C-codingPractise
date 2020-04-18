@@ -1,23 +1,28 @@
 #include<iostream>
 #include<algorithm>
+#include<vector>
 
 using namespace std;
-void print_subset(int n,int s)
-{
-    for (int i = 0; i < n; i++)
-    //把数字转换成其在二进制表中对应的位置
-        if (s&(1<<i))cout<<i<<" ";
-    cout<<endl;
-}
-
 int main()
 {
-    int n;
+    int n,s=0;
+    vector <int> a(n);//定义动态整型数组
     cin>>n;
-    for (int i = 0; i <(1<<n) ; i++)
-    //n个数一共有2^n个子集
+    for (int i = 0; i < n; i++)cin>>a[i];
+    int ans=0;
+    for (int i = 0; i < n; i++)
     {
-        print_subset(n,i);
+        s=0;
+        for (int j = i; j < n; j++)
+        {
+            s+=a[j];
+            if (s>ans)
+            {
+                ans=s;
+            }   
+        }   
     }
+    cout<<ans<<endl;
+    
     return 0;
 }
