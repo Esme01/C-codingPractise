@@ -6,7 +6,7 @@ int main()
     //int s[18];
     int n,m=0;
     cin>>n;
-    vector<int> a(n);
+    vector<int> a(n);//动态开辟的数组
     for (int i = 0; i < n; i++)
     {
         cin>>a[i];
