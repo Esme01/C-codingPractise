@@ -22,7 +22,7 @@ bool dfs(int x,int y)
     vis[x][y]=1;
     maze[x][y]=m;//标注迷宫路径
     int tx=x-1,ty=y;//向上走
-    if (in(tx,ty)&&maze[tx][ty]!='*'&&)
+    if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
     {
         if (dfs(tx,ty))
         {
