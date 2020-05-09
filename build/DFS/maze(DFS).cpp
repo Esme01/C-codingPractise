@@ -4,6 +4,8 @@ using namespace std;
 int n,m;//设置界限
 string maze[110];
 bool vis[110][110];
+//全局变量数组
+
 bool in(int x,int y)
 {
     //查看是否还在界限之内
@@ -57,4 +59,40 @@ bool dfs(int x,int y)
     maze[x][y]='.';
     return false;
   
+}
+
+//在MAIN函数里面找到迷宫的起点
+int main()
+{
+    cin>>n>>m;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>maze[i];
+    }
+    int x,y;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (maze[i][j]=='S')
+            {
+                x=i,y=j;
+            }
+        }
+    }
+    if (dfs(x,y))
+    {
+        for (int i = 0; i < n; i++)
+        {
+            cout<<maze[i]<<endl;
+        }
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+    
+    return 0;
+    
+    
 }
