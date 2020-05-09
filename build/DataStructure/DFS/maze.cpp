@@ -39,10 +39,7 @@ bool findPath(int maze[M+2][N+2],Direction direct[],Stack &s)
                     {
                         return true;//迷宫有路
                     }
-                    else
-                    {
-                        di=0;
-                    }
+                    else di=0;//继续从右边开始探索
                 }
                 else    di++;
                 
