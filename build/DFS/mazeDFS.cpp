@@ -2,9 +2,11 @@
 #include<string.h>
 using namespace std;
 int n,m;//设置界限
-string maze[110];
+string maze[110];//字符串数组
 bool vis[110][110];
 //全局变量数组
+
+int dir[4][2]={{-1,0},{0,-1},{1,0},{0,1}};
 
 bool in(int x,int y)
 {
@@ -20,44 +22,62 @@ bool dfs(int x,int y)
         return true;
     }
     vis[x][y]=1;
-    maze[x][y]=m;//标注迷宫路径
-    int tx=x-1,ty=y;//向上走
-    if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
-    {
-        if (dfs(tx,ty))
-        {
-            return true;
-        }
-    }
-    tx=x,ty=y-1;
-    if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
-    {
-        if(dfs(tx,ty))
-        {
-            return true;
-        }
-    }
-    tx=x+1,ty=y;
-    if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
-    {
-       if (dfs(tx,ty))
-       {
-           return true;
-       }
-    }
+    maze[x][y]='m';//标注迷宫路径
 
-    tx=x,ty=y+1;
-       if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
+    for (int i = 0; i < 4; i++)
     {
-       if (dfs(tx,ty))
-       {
-           return true;
-       }
+        int tx=x+dir[i][0];
+        int ty=y+dir[i][1];
+        if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
+        {
+            if (dfs(tx,ty))
+            {
+                return true;
+            }
+        }
     }
-    
-    vis[x][y]=0;
+    vis[x][y]=0;//回退
     maze[x][y]='.';
     return false;
+
+    
+    // int tx=x-1,ty=y;//向上走
+    // if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
+    // {
+    //     if (dfs(tx,ty))
+    //     {
+    //         return true;
+    //     }
+    // }
+    // tx=x,ty=y-1;
+    // if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
+    // {
+    //     if(dfs(tx,ty))
+    //     {
+    //         return true;
+    //     }
+    // }
+    // tx=x+1,ty=y;
+    // if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
+    // {
+    //    if (dfs(tx,ty))
+    //    {
+    //        return true;
+    //    }
+    // }
+
+    // tx=x,ty=y+1;
+    //    if (in(tx,ty)&&maze[tx][ty]!='*'&&!vis[tx][ty])
+    // {
+    //    if (dfs(tx,ty))
+    //    {
+    //        return true;
+    //    }
+    // }
+    
+    // vis[x][y]=0;
+    // maze[x][y]='.';
+    // return false;
   
 }
 
@@ -74,13 +94,13 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
-            if (maze[i][j]=='S')
+            if (maze[i][j]=='S')//找到起点
             {
                 x=i,y=j;
             }
         }
     }
-    if (dfs(x,y))
+    if (dfs(x,y))//从起点开始DFS
     {
         for (int i = 0; i < n; i++)
         {
