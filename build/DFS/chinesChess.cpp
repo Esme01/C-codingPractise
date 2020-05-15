@@ -51,6 +51,7 @@ int main()
             }
         }
     }
+    dfs(x,y);
     if (f)
     {
         printf("YES\n");
