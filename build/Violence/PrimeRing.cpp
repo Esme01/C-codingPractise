@@ -2,6 +2,9 @@
 #include<algorithm>
 #include<math.h>
 using namespace std;
+/**
+ * 全排列版本：在n=12时，运行很久才结束，n=16时已经停不下来了
+*/
 bool prime(int n)
 {
     bool flag=true;

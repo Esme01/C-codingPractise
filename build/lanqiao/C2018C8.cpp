@@ -15,7 +15,7 @@ int main()
    cin>>n;
    while (ss.str().size()<4*n-4)
    {
-       ss<<t;
+       ss<<t;//循环拼接用stringstream
        t++;
    }
    string s=ss.str();
