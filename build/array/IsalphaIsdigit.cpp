@@ -7,7 +7,7 @@
 #define MAXN 100+10
 using namespace std;
 
-char s[MAXN];
+// char s[MAXN];
 int main()
 {
    char c;

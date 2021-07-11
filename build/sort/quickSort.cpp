@@ -33,12 +33,11 @@ int partition(int a[],int first,int end)
 
 void quickSort(int r[],int first,int end)
 {
-    if(first<end){
+    if(first<end){//递归函数的出口
         int pos=partition(r,first,end);//一次划分
         quickSort(r,first,pos-1);//对前一个子序列进行快速排序
         quickSort(r,pos+1,end);//对后一个子序列进行快速排序
     }
-    
 }
 
 int main()
