@@ -4,6 +4,7 @@ const int N=1e6 + 10;//100w ;const 有只读特性
 int n;
 int q[N];
 //在最开始设定好变量
+//快排在面试的时候用，比赛几乎不用
 /*复习打卡
 6.27
 6.28
@@ -25,7 +26,8 @@ void quick_sort(操作的数组，值的范围l，r)
 
 void quick_sort(int q[],int l,int r)
 {
-    if (l>=r)return; // 判边界，只有一个数或者没有数就return
+    if (l>=r)return;
+     // 判边界，只有一个数或者没有数就return
     int x=q[(r+l)>>1],i=l-1,j=r+1;
     //由于边界问题，所以x=q[l]。i=l-1,j=r+1;而不是i=l,j=r
     //x取左端的值，当测试用例是升序数列时，测试超时
@@ -42,6 +44,8 @@ void quick_sort(int q[],int l,int r)
     }
     quick_sort(q,l,j);//quick_sort(q,l,i-1)
     quick_sort(q,j+1,r);//quick_sort(q,i,r)
+
+    //换成 i 会有区间边界问题
 }
 
 int main(){
