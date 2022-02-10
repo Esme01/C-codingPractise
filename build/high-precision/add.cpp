@@ -7,6 +7,7 @@ using namespace std;
 const int N=1e6+10;//+10是防止出现边界问题
 
 vector<int> add(vector<int> &A, vector<int> &B)
+//加上引用&,就会提高效率。否则要将整个数组拷贝一遍
 {
     vector<int> C;
     int t=0;//存储每一位的进位

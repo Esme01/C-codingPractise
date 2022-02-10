@@ -25,7 +25,7 @@ void merge_sort(int q[],int l,int r)
     //2. 递归排序
     merge_sort(q,l,mid),merge_sort(q,mid+1,r);
     //3. 归并——合二为一（难点）
-    int k=0,i=l,j=mid+1;//K表示已经合并了几个数;ij分别表示两个指针
+    int k=0,i=l,j=mid+1;//K表示已经合并了几个数; i j分别表示两个指针
     while (i<=mid && j<=r)
     {
         if(q[i]<=q[j])tmp[k++]=q[i++];
@@ -34,7 +34,7 @@ void merge_sort(int q[],int l,int r)
     while(i<=mid)tmp[k++]=q[i++];//左半边没有循环结束
     while(j<=r)tmp[k++]=q[j++];//右半边没有循环结束
 
-    for(i=l,j=0;i<=r;i++,j++)q[i]=tmp[j];
+    for(i=l,j=0;i<=r;i++,j++)q[i]=tmp[j];//结果回传
 }
 
 int main()

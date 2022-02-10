@@ -20,7 +20,7 @@ vector<int> sub(vector<int> &A, vector<int> &B)
     vector<int> C;
     for(int i=0,t=0;i<A.size();i++)
     {
-        t=A[i]-t;
+        t=A[i]-t;//减去借位
         if(i<B.size())t-=B[i];
         C.push_back((t+10)%10);
         if(t<0)t=1;//向前一位进位
@@ -28,6 +28,7 @@ vector<int> sub(vector<int> &A, vector<int> &B)
     }
     //需要去掉前导0
     while (C.size()>1&&C.back()==0)C.pop_back();
+    //若只有一个0则要留下
     return C;
 }
 

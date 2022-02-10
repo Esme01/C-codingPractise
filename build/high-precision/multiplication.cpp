@@ -10,13 +10,14 @@ vector<int> mul(vector<int> &A, int b)
     //乘法模板与加法类似，只是进位 t 不同
     vector<int> C;
     int t=0;//进位
-    for(int i=0;i<A.size()||t;i++)
+    for(int i=0;i<A.size()||t;i++)//只要t不是0都往下做
     {
-        t+=A[i]*b;//从低位算起
+        t+=A[i]*b;//从低位算起，把B看成一个整体去乘A
         C.push_back(t%10);
         t/=10;
     }
     while (C.size()>1&&C.back()==0)C.pop_back();
+    //若只有一个0则保留不删除
     return C;
 }
 

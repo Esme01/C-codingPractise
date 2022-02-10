@@ -10,7 +10,7 @@ vector<int> div(vector<int> &A, int b,int &r)
 {
     //加法、减法、除法都是从最低位开始算，除法从最高位开始
     //为了统一，除法的大数也倒着存储
-    vector<int> C;
+    vector<int> C;//商
     r=0;
     for (int i = A.size()-1; i >= 0; i--)
     {

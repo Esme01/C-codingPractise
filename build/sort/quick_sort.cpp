@@ -1,3 +1,4 @@
+//ACWING模板题
 #include<iostream>
 using namespace std;
 const int N=1e6 + 10;//100w ;const 有只读特性
@@ -52,7 +53,7 @@ int main(){
     //注意scanf的地址符
     scanf("%d",&n);
     for (int i = 0; i < n; i++)scanf("%d",&q[i]);
-    //scanf输入要比cin好
+    //scanf输入要比cin好，速度快
     quick_sort(q,0,n-1);//会直接修改数组q[]的值
     for (int i = 0; i < n; i++)printf("%d ",q[i]);
     return 0;
